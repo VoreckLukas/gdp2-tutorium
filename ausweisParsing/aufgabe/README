@@ -1,0 +1,13 @@
+Input:
+IDD<<LZ6311T475<<<<<<<<<<<<<<
+8308126<3110315D<<2108<<<<<<9
+MUSTERMANN<<ERIKA<<<<<<<<<<<<
+
+Output:
+Ausweisnummer: LZ6311T475
+Geburtsdatum: 83.08.12
+Gültigkeitsdatum: 31.10.31
+Ggf Versionsnummer: 2108
+Prüfziffer: 9
+Familienname: Mustermann
+Vorname: Erika
