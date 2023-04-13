@@ -8,7 +8,6 @@ public class Main {
 		splitWithLoop();
 		splitWithArray();
 		substring();
-		// Mehr kommentare folgen im laufe des tages
 	}
 	
 	// Mit Splitting bearbeiten, ohne die teilstringe in ein anderes array zu speichern
@@ -31,6 +30,7 @@ public class Main {
 		String[] line3parts = line3.split("<");
 
 		for (String part : line1parts) {
+			// In der ersten zeile gibt es nur 2 nicht leere strings. der IDD string kann ignoriert werden
 			if (!part.isEmpty() && part != "IDD") {
 				ausweisnummer = part;
 			}
@@ -40,19 +40,24 @@ public class Main {
 		for (String part : line2parts) {
 			if (!part.isEmpty()) {
 				if (position == 0) {
+					// Der erste nicht leere string ist das geburtsdatum
 					String jahr = part.substring(0, 2);
 					String monat = part.substring(2, 4);
 					String tag = part.substring(4, 6);
 					geburtsdatum = tag + "." + monat + "." + jahr;
 				} else if (position == 1) {
+					// Der zweite das gültigkeitsdatum
 					String jahr = part.substring(0, 2);
 					String monat = part.substring(2, 4);
 					String tag = part.substring(4, 6);
 					gültigkeitsdatum = tag + "." + monat + "." + jahr;
 				} else {
+					// Die letzten beiden kann man im selben fall behandeln
 					if (part.length() == 1) {
+						// Falls der string nur einen char hat, ist es die prüfziffer
 						prüfziffer = part;
 					} else {
+						// Ansonsten die versionsnummer
 						versionsnummer = part;
 					}
 				}
@@ -64,8 +69,10 @@ public class Main {
 		for (String part : line3parts) {
 			if (!part.isEmpty()) {
 				if (position == 0) {
+					// Der erste nicht leere string ist der familien name
 					familienName = part;
 				} else {
+					// Der zweite der vorname
 					vorname = part;
 				} 				
 				position++;
